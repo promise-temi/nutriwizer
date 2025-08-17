@@ -31,8 +31,6 @@ class Massive_Csv_To_Parquet:
 
             print(f"Chunk {i+1} écrit dans le Parquet")
 
-
-
         # Fermer le writer à la fin
         if self.writer:
             self.writer.close()

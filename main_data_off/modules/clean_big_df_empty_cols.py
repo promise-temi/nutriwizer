@@ -25,7 +25,7 @@ class Clean_Big_Df_Empty_Cols:
         """
         df = chunk
         df_len = df.shape[0]
-        # identification du pourcentage de vide pour chaques collones
+        # identification du pourcentage de vide pour chaques colonnes
         for column in df.columns.to_list():
             column_name = column
             empty_sum = df[column].isna().sum()
@@ -113,8 +113,8 @@ class Clean_Big_Df_Empty_Cols:
         """
         def remove_empty_cols(df_):
             """
-            pour le chunks conserné supprimer les collones a supprimer pour le premier 
-            chunk on write et pour les suivants on add
+           Pour le chunk concerné : supprimer les colonnes à exclure. 
+           Pour le premier chunk, utiliser write. Pour les suivants, utiliser add.
             """
             df_= df_.drop(columns=self.colonnes_a_supprimer)
             df_.to_csv(f'{self.output_path}/no_empty_col_dataset.csv',
